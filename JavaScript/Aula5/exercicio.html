@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 4.5</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //1
+      let title = document.createElement("h1");
+      document.body.appendChild(title);
+      title.innerHTML = "Exercício 4.5 - JavaScript DOM";
+      
+      //2
+      let firstDiv = document.createElement("div");
+      firstDiv.className = "main-content";
+      document.body.appendChild(firstDiv);
+
+      //3
+      let childDiv = document.createElement("div");
+      childDiv.className = "center-content";
+      firstDiv.appendChild(childDiv);
+
+      //4
+      let childP = document.createElement("p");
+      childP.innerHTML = "Estou estudando JavaScript";
+      document.querySelector('.center-content').appendChild(childP);
+      
+      //5
+      let secondChildDiv = document.createElement("div");
+      secondChildDiv.className = "left-content";
+      firstDiv.appendChild(secondChildDiv);
+
+      //6
+      let thirdChildDiv = document.createElement("div");
+      thirdChildDiv.className = "right-content";
+      document.querySelector(".main-content").appendChild(thirdChildDiv);
+
+      //7
+      let firstImg = document.createElement("img");
+      firstImg.classeName = "small-image";
+      firstImg.src = "https://picsum.photos/200";
+      secondChildDiv.appendChild(firstImg);
+
+      //8
+      let array = ["um","dois","tres","quatro","cinco","seis","sete","oito","nove","dez"];
+      let list = document.createElement("ul");
+        for (let i=0; i<array.length; i++){
+          let item = document.createElement("li");
+          item.innerHTML = array[i];
+          list.appendChild(item);
+        }
+      document.querySelector('.right-content').appendChild(list);
+      
+      //9
+      let quartaChildDiv = document.createElement("h3");
+      firstDiv.appendChild(quartaChildDiv);
+      let quintaChildDiv = document.createElement("h3");
+      firstDiv.appendChild(quintaChildDiv);
+      let sextaChildDiv = document.createElement("h3");
+      firstDiv.appendChild(sextaChildDiv);
+
+      //1.1
+      title.className = "title";
+
+      //1.2
+      quartaChildDiv.className = "description";
+      quintaChildDiv.className = "description";
+      sextaChildDiv.className = "description";
+
+      //1.3
+      firstDiv.removeChild(secondChildDiv);
+
+      //1.4
+      thirdChildDiv.style.marginRight = "auto";
+
+      //1.5
+      document.querySelector(".center-content").parentNode.style.background = "green";
+
+      //1.6
+      list.removeChild(list.lastChild);
+      list.removeChild(list.lastChild);
+
+    
+    
+
+
+
+
+
+      // let array = ["Fabiola","Alexandre"];
+      // let list = document.createElement("ul");
+
+      // for (let indice in array){
+      //   let item = document.createElement("li");
+      //   item.innerHTML = array[indice];
+      //   list.appendChild(item);        
+      // }
+      // document.body.appendChild(list);
+
+
+      // COLOQUE SEU CÓDIGO AQUI
+    </script>
+  </body>
+</html>
