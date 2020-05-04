@@ -1,0 +1,40 @@
+body {
+  background-color: teal;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1em;
+}
+
+img {
+	max-width: 100%;
+}
+
+figure {
+	margin: 0;
+}
+
+@media screen and (max-width:700px) {
+
+  body{
+    margin: 5%;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  img {
+    padding: 15px 0px;
+  }
+}

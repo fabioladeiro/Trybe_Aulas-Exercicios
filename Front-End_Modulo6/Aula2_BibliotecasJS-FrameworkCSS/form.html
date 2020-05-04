@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de currículo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <form method="GET" class="form">
+      <fieldset><legend><strong>Identificação do usuário</strong></legend>
+        <div class="form-group form-control-sm">
+          <label class="mr-sm-2" for="full-name">Nome:</label>
+          <input class="form-control" id="full-name" name="fname" type="text" maxlength="40" required="required" size=50>
+        </div>
+        <div class="form-group form-control-sm">
+          <label fclass="mr-sm-2" or="tEmail">E-mail:</label>
+          <input class="form-control" id="tEmail" name="cEmail" type="text" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        </div>
+        <div class="form-group form-control-sm">
+          <label>CPF:</label>
+          <input class="form-control" type="text" maxlength="11" required="required">
+        </div>
+        <div class="form-group form-control-sm">
+          <label>Endereço:</label>
+          <input class="form-control" type="text" maxlength="200" required="required">
+        </div>
+        <div class="form-group form-control-sm">
+          <label>Cidade:</label>
+          <input class="form-control" type="text" maxlength="28" required="required">
+        </div>
+        <div class="form-group form-control-sm">
+          <label for="cEst">Estado:</label>
+          <select class="form-control form-control-sm" id="cEst" type="text" maxlength="28" required="required">
+          </select>
+        </div>
+        <br>
+        <div class="form-group form-control-sm">
+          <label for="casa"><input id="casa" type="radio" name="moradia" required="required">Casa</label>
+          <label for="apartamento"><input id="apartamento" name="moradia" type="radio" required="required">Apartamento</label>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset><legend><strong>Currículo</strong></legend>
+      <form>
+        <div class="form-group form-control-sm">
+          <label>Resumo do currículo:</label><br>
+          <textarea class="form-control" maxlength="1000" required="required" cols="30" rows="5"></textarea>
+        </div>
+        <br>
+        <br>
+        <div class="form-group form-control-sm">
+          <label>Cargo:</label>
+          <input class="form-control" type="text" required="required" maxlength="40">
+        </div>
+        <div class="form-group form-control-sm">
+          <label>Descrição do cargo:</label>
+          <input class="form-control" type="text" required="required" maxlength="500">
+        </div>
+        <div class="form-group form-control-sm">
+          <label>Data:</label>
+          <input class="form-control" type="date" required="required" max = '1990-11-31' >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+  <script>
+
+    var estados = ['AC', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG','PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
+
+    function addCity() {
+      for(let i = 0; i<estados.length; i++){
+        const createOption = document.createElement('option');
+        createOption.innerHTML = estados[i];
+        document.getElementById('cEst').appendChild(createOption);
+      }
+    }
+    addCity();
+
+    function submit(event) {
+      event.preventDefault();
+      return false;
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

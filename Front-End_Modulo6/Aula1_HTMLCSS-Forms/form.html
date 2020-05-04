@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de currículo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form method="GET" class="form">
+    <fieldset><legend><strong>Identificação do usuário</strong></legend>
+      <div class="line-content">
+        <label for="full-name">Nome:</label>
+        <input id="full-name" name="fname" type="text" maxlength="40" required="required" size=50>
+      </div>
+      <div class="line-content">
+        <label for="tEmail">E-mail:</label>
+        <input id="tEmail" name="cEmail" type="text" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      </div>
+      <div class="line-content">
+        <label>CPF:</label>
+        <input type="text" maxlength="11" required="required">
+      </div>
+      <div class="line-content">
+        <label>Endereço:</label>
+        <input type="text" maxlength="200" required="required">
+      </div>
+      <div class="line-content">
+        <label>Cidade:</label>
+        <input type="text" maxlength="28" required="required">
+      </div>
+      <div class="line-content">
+        <label for="cEst">Estado:</label>
+        <select id="cEst" type="text" maxlength="28" required="required">
+        </select>
+      </div>
+      <div class="line-content">
+        <label for="casa"><input id="casa" type="radio" name="moradia" required="required">Casa</label>
+        <label for="apartamento"><input id="apartamento" name="moradia" type="radio" required="required">Apartamento</label>
+      </div>
+    </fieldset>
+    <br>
+    <fieldset><legend><strong>Currículo</strong></legend>
+    <form>
+      <div class="line-content">
+        <label>Resumo do currículo:</label><br>
+        <textarea maxlength="1000" required="required" cols="30" rows="5"></textarea>
+      </div>
+      <div class="line-content">
+        <label>Cargo:</label>
+        <input type="text" required="required" maxlength="40">
+      </div>
+      <div class="line-content">
+        <label>Descrição do cargo:</label>
+        <input type="text" required="required" maxlength="500">
+      </div>
+      <div class="line-content">
+        <label>Data:</label>
+        <input type="date" required="required" max = '1990-11-31' >
+      </div>
+      <button type="submit">Enviar</button>
+    </fieldset>
+  </form>
+  <script>
+
+    var estados = ['AC', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG','PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
+
+    function addCity() {
+      for(let i = 0; i<estados.length; i++){
+        const createOption = document.createElement('option');
+        createOption.innerHTML = estados[i];
+        document.getElementById('cEst').appendChild(createOption);
+      }
+    }
+    addCity();
+
+    function submit(event) {
+      event.preventDefault();
+      return false;
+    }
+  </script>
+</body>
+</html>

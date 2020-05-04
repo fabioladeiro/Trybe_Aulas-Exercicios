@@ -1,0 +1,41 @@
+#p1 {
+  animation-duration: 3s;
+  animation-name: appear;
+  background-color: rgba(127, 255, 212, 0.479);
+}
+
+#p2 {
+  animation-name: slideon;
+  animation-duration: 5s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    background-color: aqua;
+  }
+
+  60% {
+    opacity: 0.5;
+    font-size: 200%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    opacity: 1;
+    background-color: rgba(127, 255, 212, 0.479);
+  }
+}
+
+@keyframes slideon{
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
