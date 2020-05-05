@@ -82,6 +82,11 @@ function exercise7(obj,index) {
 }
 exercise7(lesson1,0);
 
+//exercise 8
+function exercise8(obj, key, value) {
+  if (obj[key] === value) return true;
+  return false;
+}
 
-
-
+console.log(exercise8(lesson3, 'turno', 'noite'));
+console.log(exercise8(lesson3, 'materia', 'Maria Clara'));
