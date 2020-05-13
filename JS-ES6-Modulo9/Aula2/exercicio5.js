@@ -63,16 +63,28 @@ const books = [
   },
 ];
 
-const expected_result = 43;
+const expected_result = {
+  author: {
+    birthYear: 1948,
+    name: 'George R. R. Martin'
+  },
+  genre: 'Fantasia',
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  releaseYear: 1991
+};
 
-//Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
+// Encontre o livro com o maior nome.
 
 const reduceFunction = (accumulator, currentValue) => {
-  return accumulator + (currentValue.releaseYear - currentValue.author.birthYear);
+  if (currentValue.name.length > accumulator.length) {
+    return currentValue;
+  }
+  return accumulator;
 }
 
-function averageAge() {
-  return books.reduce(reduceFunction,0)/books.length;
+function longestNamedBook() {
+  return books.reduce(reduceFunction); 
 }
 
-assert.equal(averageAge(), expected_result);
+assert.deepEqual(longestNamedBook(), expected_result);
