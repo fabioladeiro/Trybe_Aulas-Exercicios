@@ -1,0 +1,25 @@
+.box-content {
+  display: flex;
+  justify-content: center;
+  border: 3px solid salmon;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.non-dropdown {
+  display: none;
+}
+
+.each-dropdown {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid slateblue;
+}
+
