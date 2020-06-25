@@ -5,8 +5,6 @@ class PictureDogs extends Component {
     super(props);
     this.state = {
       dogImage: "",
-      name,
-      array
     };
   }
 
@@ -18,6 +16,7 @@ class PictureDogs extends Component {
     fetch("https://dog.ceo/api/breeds/image/random")
       .then(res => res.json())
       .then(result => {
+
         this.setState({ dogImage: result})
       });
   }
